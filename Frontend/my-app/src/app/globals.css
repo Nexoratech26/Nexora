@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAFAF9;
+  --foreground: #2D3750;
+
+  --primary: #7763F9;
+  --primary-dark: #6955F5;
+
+  --lavender: #C3BFE8;
+  --lavender-light: #F3F0FB;
+
+  --border: #E8E7E9;
+  --white: #FFFFFF;
+  /* background: linear-gradient(
+  135deg,
+  #6955F5,
+  #8068F5
+  ); */
+  /* background: linear-gradient(135deg, #6955F5, #8068F5);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent; */
+}
