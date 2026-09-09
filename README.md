@@ -3,8 +3,7 @@
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
-cd <project-folder>
+git clone "https://github.com/Nexoratech26/Nexora.git
 ```
 
 ### 2. Navigate to the Frontend
