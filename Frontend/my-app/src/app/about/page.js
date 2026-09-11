@@ -1,6 +1,6 @@
 export default function About(){
     return(
-        <div  className=" min-h-screen flex  justify-center items-center  ">
+        <div  className=" max-h-screen flex  justify-center items-center  ">
            About
         </div>
     )

@@ -1,6 +1,6 @@
 export default function Services(){
     return(
-        <div  className=" min-h-screen flex  justify-center items-center  " >
+        <div  className=" max-h-screen flex  justify-center items-center  " >
             Services
         </div>
     )
