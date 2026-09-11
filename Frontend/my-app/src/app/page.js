@@ -2,16 +2,16 @@ import Card from "@/components/Card";
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden dark:bg-[#060613]  bg-white  ">
 
       {/* Background decoration */}
-      <div className="absolute -top-24 -right-50 w-87.5 h-87.5 rounded-full bg-[#F3F0FB]" />
+      <div className="absolute -top-24 -right-50 w-87.5 h-87.5 rounded-full bg-[#F3F0FB] dark:blur-xl dark:dark:bg-[#131332] " />
 
       {/* Hero */}
-      <main className="relative w-[90%] mx-auto mt-5 min-h-96 border-l-2 border-[#7763F9] flex flex-col lg:flex-row items-center justify-between gap-10 px-5 sm:px-8 lg:px-10">
+      <main className="relative w-[90%] mx-auto mt-5 min-h-96 border-l-2 border-[#7763F9] flex flex-col lg:flex-row items-center justify-between gap-10 px-5 sm:px-8 lg:px-10 dark:border-l ">
 
         <div>
-          <h1 className="text-5xl lg:text-7xl font-bold text-[#2D3750]">
+          <h1 className="text-5xl lg:text-7xl font-bold dark:text-white text-[#2D3750]">
             Nexora
           </h1>
 
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
 
         {/* Decorative line */}
-        <span className="hidden lg:block absolute bottom-8 w-9/12 border border-[#C3BFE8]" />
+        <span className="hidden lg:block absolute bottom-8 w-9/12 border border-[#C3BFE8] dark:border-gray-900 " />
 
       </main>
 
@@ -42,7 +42,7 @@ export default function Home() {
       <section className="my-15 px-5 sm:px-8 lg:px-17">
 
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#2D3750]">
+          <h2 className="text-3xl sm:text-4xl font-bold dark:text-white  text-[#2D3750]">
             Selected work
           </h2>
 
