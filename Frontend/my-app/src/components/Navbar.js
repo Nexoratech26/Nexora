@@ -22,7 +22,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex items-center justify-between border-b-2 dark:border-b  dark:border-gray-800  dark:dark:bg-[#060613] dark: border-[#E8E7E9] px-5 py-5 sm:px-8 lg:px-12 lg:py-6">
+    <nav className="flex items-center justify-between border-b-2 dark:border-b fixed left-0 right-0 z-1  transition-colors duration-300 bg-white  dark:border-gray-800  dark:dark:bg-[#0B0D14] dark: border-[#E8E7E9] px-5 py-5 sm:px-8 lg:px-12 lg:py-6">
 
       {/* Logo */}
       <h1 className="text-xl font-bold dark:text-white  text-blue-950">
@@ -54,7 +54,7 @@ export default function Navbar() {
 
       {/* Contact */}
       <div className=" flex  items-center gap-3  ">
-      <button className="rounded-3xl bg-[#7763F9] px-3 py-2 text-sm text-white hover:bg-violet-600 sm:px-4">
+      <button className="rounded-3xl bg-[#7763F9] px-3 py-2 text-sm text-white hover:bg-[#7258f5da] sm:px-4">
         Get in touch
       </button>
       <ThemeToggle/>

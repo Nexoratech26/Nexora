@@ -7,7 +7,7 @@ export default function ThemeProvider({children}){
             attribute='class'
             defaultTheme="system"
             enableSystem
-            disableTransitionOnChange
+            // disableTransitionOnChange
         >
             {children}
         </NextThemeProvider>

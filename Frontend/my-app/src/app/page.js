@@ -2,13 +2,21 @@ import Card from "@/components/Card";
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden dark:bg-[#060613]  bg-white  ">
+    <div className="relative overflow-hidden   ">
 
       {/* Background decoration */}
-      <div className="absolute -top-24 -right-50 w-87.5 h-87.5 rounded-full bg-[#F3F0FB] dark:blur-xl dark:dark:bg-[#131332] " />
+      <div className="absolute -top-24 -right-50 w-87.5 h-87.5 rounded-full transition-colors duration-300 bg-[#e8caf6] blur-xl dark:dark:bg-[#131332] " />
 
       {/* Hero */}
-      <main className="relative w-[90%] mx-auto mt-5 min-h-96 border-l-2 border-[#7763F9] flex flex-col lg:flex-row items-center justify-between gap-10 px-5 sm:px-8 lg:px-10 dark:border-l ">
+      <main className="
+      relative w-[90%] 
+      mx-auto mt-5 min-h-96
+       border-l-2 border-[#7763F9] 
+       flex flex-col lg:flex-row items-center justify-between 
+       gap-10 px-5 sm:px-8 lg:px-10 
+       dark:border-l
+      transition-colors duration-300 
+       ">
 
         <div>
           <h1 className="text-5xl lg:text-7xl font-bold dark:text-white text-[#2D3750]">
@@ -27,7 +35,7 @@ export default function Home() {
               solutions that help businesses grow, connect, and stand out.
             </p>
 
-            <button className="w-fit rounded bg-[#7763F9] px-4 py-2 text-white">
+            <button className="w-fit rounded bg-[#7763F9] px-4 py-2 text-white hover:hover:bg-[#7258f5da] ">
               View Portfolio
             </button>
           </div>

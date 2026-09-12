@@ -1,7 +1,7 @@
 export default function Card(props) {
     const {number} = props
     return (
-        <div className=" w-full rounded-xl  h-full shadow-lg    bg-[#F3F0FB] dark:bg-[#151528] dark:border-gray-700 dark:border    " >
+        <div className=" w-full rounded-xl  h-full shadow-lg    bg-[#F3F0FB] dark:bg-[#141620] dark:border-gray-700 dark:border    " >
             <img  src="https://t4.ftcdn.net/jpg/02/60/51/63/360_F_260516386_qKSZGbpEOJYUeXIYBYGbYYbsiWIpI6Uz.jpg" 
                 className=" w-full rounded-t-xl  "
             />
