@@ -12,7 +12,7 @@ export default function Home() {
       relative w-[90%] 
       mx-auto mt-5 min-h-96
        border-l-2 border-[#7763F9] 
-       flex flex-col lg:flex-row items-center justify-between 
+       flex flex-col lg:flex-row items-center justify-around  
        gap-10 px-5 sm:px-8 lg:px-10 
        dark:border-l
       transition-colors duration-300 

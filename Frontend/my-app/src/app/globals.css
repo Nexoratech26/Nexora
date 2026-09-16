@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
+}
+
+html {
+  scrollbar-width: none;
 }
