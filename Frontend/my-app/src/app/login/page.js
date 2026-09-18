@@ -10,38 +10,46 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  function handleLogin(e) {
+  async function handleLogin(e) {
     e.preventDefault();
 
     setError("");
 
     if (!email || !password) {
-      setError("Please enter email and password");
-      return;
+        setError("Please enter email and password");
+        return;
     }
 
-    // Get the account saved during signup
-    const savedUser = localStorage.getItem("user");
+    try {
+        const response = await fetch("http://localhost:5000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password,
+            }),
+        });
 
-    if (!savedUser) {
-      setError("No account found. Please sign up first.");
-      return;
+        const data = await response.json();
+
+        if (!response.ok) {
+            setError(data.message || "Login failed");
+            return;
+        }
+
+        console.log(data);
+
+        document.cookie = "loggedIn=true; path=/";
+
+        router.push("/");
+
+    } catch (error) {
+        console.error(error);
+        setError("Unable to connect to server");
     }
-
-    const user = JSON.parse(savedUser);
-      console.log(user)
-    // Check email and password
-    const correctData = user.some(user=>user.email === email && user.password === password)
-    if (!correctData) {
-      setError("Incorrect email or password");
-      return;
-    }
-
-    // Login successful
-    document.cookie = "loggedIn=true; path=/";
-
-    router.push("/");
-  }
+}
 
   return (
     <main className="min-h-screen overflow-y-hidden flex items-center justify-center">

@@ -12,46 +12,95 @@ export default function Signup() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
 
-    function handleSignup(e) {
-        e.preventDefault();
+    // function handleSignup(e) {
+    //     e.preventDefault();
 
-        setError("");
+    //     setError("");
 
-        if (!name || !email || !password || !confirmPassword) {
-            setError("Please fill all fields");
-            return;
-        }
+    //     if (!name || !email || !password || !confirmPassword) {
+    //         setError("Please fill all fields");
+    //         return;
+    //     }
 
-        if (password !== confirmPassword) {
-            setError("Passwords do not match");
-            return;
-        }
+    //     if (password !== confirmPassword) {
+    //         setError("Passwords do not match");
+    //         return;
+    //     }
 
-        const existingUser = localStorage.getItem("user");
-        const Euser =  existingUser? JSON.parse(existingUser) :[]
-        const userExists = Euser.some(user=>user.email === email);
+    //     const existingUser = localStorage.getItem("user");
+    //     const Euser =  existingUser? JSON.parse(existingUser) :[]
+    //     const userExists = Euser.some(user=>user.email === email);
 
 
-        if (userExists) {
+    //     if (userExists) {
       
-                setError("An account already exists. Please login.");
+    //             setError("An account already exists. Please login.");
         
+    //     }
+
+    //     const user = {
+    //         name,
+    //         email,
+    //         password,
+    //     };
+
+    //     Euser.push(user)
+
+    //     localStorage.setItem("user", JSON.stringify(Euser));
+
+    //     // document.cookie = "loggedIn=true; path=/";
+
+    //     router.push("/login");
+    // }
+
+
+    async function handleSignup(e) {
+    e.preventDefault();
+
+    setError("");
+
+    if (!name || !email || !password || !confirmPassword) {
+        setError("Please fill all fields");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        setError("Passwords do not match");
+        return;
+    }
+
+    try {
+        const response = await fetch("http://localhost:5000/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                Username: name,
+                email: email,
+                password_hash: password,
+            }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            setError(data.message || "Signup failed");
+            return;
         }
 
-        const user = {
-            name,
-            email,
-            password,
-        };
-
-        Euser.push(user)
-
-        localStorage.setItem("user", JSON.stringify(Euser));
-
-        // document.cookie = "loggedIn=true; path=/";
+        console.log(data);
 
         router.push("/login");
+
+    } catch (error) {
+        console.error(error);
+        setError("Unable to connect to server");
     }
+}
+
+
+
 
     return (
         <main className="min-h-screen flex items-center justify-center">
